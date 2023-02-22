@@ -15,7 +15,7 @@ const NavBar = () => {
             alt="avatar"
           />
           <h4 className="mx-2 mt-2 text-white dark:text-gray-200 text-2xl font-bold">
-            John Doe
+            Abdullah Al Mamun
           </h4>
         </div>
 
