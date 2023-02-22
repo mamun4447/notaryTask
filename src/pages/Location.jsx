@@ -1,11 +1,13 @@
 import axios from "axios";
 import React, { useContext } from "react";
 import { toast } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import { context } from "../context/Provider";
 
 const Location = () => {
   const { data, setData } = useContext(context);
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -15,8 +17,10 @@ const Location = () => {
     const date = form.date.value;
     const time = form.time.value;
     setData({ ...data, singingLocation, date, time });
+    navigate("/");
   };
 
+  // <====< Post Information >====>//
   axios
     .post(
       "https://notaryapp-staging.herokuapp.com/plugin/getPluginSampleResponse",
